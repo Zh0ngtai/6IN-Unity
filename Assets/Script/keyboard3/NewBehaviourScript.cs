@@ -10,7 +10,7 @@ public class NewBehaviourScript : MonoBehaviour
     public KeyCode Right;
     public KeyCode Left;
 
-    private Vector3 startPosition;
+    private Vector startPosition;
 
     void Start()
     {
@@ -40,22 +40,16 @@ public class NewBehaviourScript : MonoBehaviour
             x = -17.5f;
         }
 
-        // 키보드 입력에 따른 y 위치 제한
-        float y = transform.position.y;
 
-        if (y > 9f)
-        {
-            y = 9f;
-            x = 0f;
-        }
 
-        // 패들 위치 설정
-        transform.position = new Vector3(x, y, 0);
+        transform.position = new Vector2(x, y);
+
     }
 
     public void Reset()
     {
-        rigidbody.velocity = Vector3.zero;
+
+        rigidbody.velocity = Vector2.zero;
         transform.position = startPosition;
     }
 }
