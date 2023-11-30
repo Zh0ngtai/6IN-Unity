@@ -12,9 +12,7 @@ public class Paddle : MonoBehaviour
     public KeyCode Left;
 
     private float movement;
-
-    private Vector2 startPosition;
-
+    private Vector3 startPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -34,8 +32,7 @@ public class Paddle : MonoBehaviour
 
     public void Reset()
     {
-        rigidbody.velocity = Vector2.zero;
-
+        rigidbody.velocity = Vector3.zero;
         transform.position = startPosition;
     }
 }

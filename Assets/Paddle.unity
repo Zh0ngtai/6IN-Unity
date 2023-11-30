@@ -227,11 +227,7 @@ GameObject:
   - component: {fileID: 2105044463}
   - component: {fileID: 2105044462}
   - component: {fileID: 2105044461}
-<<<<<<< Updated upstream
   - component: {fileID: 2105044460}
-=======
-  - component: {fileID: 2105044465}
->>>>>>> Stashed changes
   m_Layer: 0
   m_Name: Paddle
   m_TagString: Untagged
@@ -239,7 +235,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-<<<<<<< Updated upstream
 --- !u!114 &2105044460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,8 +252,6 @@ MonoBehaviour:
   rigidbody: {fileID: 0}
   Right: 100
   Left: 97
-=======
->>>>>>> Stashed changes
 --- !u!50 &2105044461
 Rigidbody2D:
   serializedVersion: 4
@@ -398,26 +391,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< Updated upstream
-=======
---- !u!114 &2105044465
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2105044459}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6aeda8a211082df4ab495e226591ad50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player1: 0
-  speed: 5
-  rigidbody: {fileID: 0}
-  Right: 100
-  Left: 97
->>>>>>> Stashed changes
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

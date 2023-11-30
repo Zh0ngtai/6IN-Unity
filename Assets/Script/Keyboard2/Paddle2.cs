@@ -18,20 +18,16 @@ public class Paddle2 : MonoBehaviour
         {
             horizontalInput = -1f;
         }
-
         else if (Input.GetKey(KeyCode.D))
         {
             horizontalInput = 1f;
         }
-
         else
         {
             horizontalInput = 0f;
         }
 
         // 패들을 x축으로만 이동시킴
-
-        transform.Translate(new Vector2(horizontalInput * paddleSpeed * Time.deltaTime, 0));
-
+        transform.Translate(new Vector3(horizontalInput * paddleSpeed * Time.deltaTime, 0, 0));
     }
 }
