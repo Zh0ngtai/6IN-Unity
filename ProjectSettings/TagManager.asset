@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Brick
+  - TopWall
+  - Wall
+  - Ball
   layers:
   - Default
   - TransparentFX
