@@ -16,6 +16,7 @@ public class ball : MonoBehaviour
         rb.AddForce(Random.insideUnitSphere * speed, ForceMode2D.Impulse);
     }
 
+
     // Update is called once per frame
     void Update()
     {

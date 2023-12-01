@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6487619003271455977}
   - component: {fileID: 4556769546669723750}
-  - component: {fileID: 4730728827240209093}
+  - component: {fileID: -6776439542388190428}
   m_Layer: 0
   m_Name: Brick
   m_TagString: Brick
@@ -163,7 +163,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &4730728827240209093
+--- !u!114 &-6776439542388190428
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -175,3 +175,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dda94002057a994f8401fd815e367fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Ball: {fileID: 0}
