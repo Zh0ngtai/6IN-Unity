@@ -14,5 +14,9 @@ public class Brick : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    
+
+    private void OnCollisionEnter2D (Collision2D collision)
+    {
+        brickLife--;
+    }
 }
