@@ -1,11 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject Brick;
     public GameManager I;
+
+    public Text timeText;
+    public Text scoreText;
+    public Text bestScoreText;
+    public Text thisScoreText;
+    public GameObject endPanel1;
+    public GameObject endPanel2;    
     // Start is called before the first frame update
 
     private void Awake()
