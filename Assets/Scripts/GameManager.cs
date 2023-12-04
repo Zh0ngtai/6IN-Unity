@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0.0f;
         LosePanel.SetActive(true);
-
+        Debug.Log("HI");
     }
 
 
