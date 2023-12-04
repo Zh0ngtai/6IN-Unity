@@ -14,11 +14,23 @@ public class Paddle : MonoBehaviour
     private float movement;
     private Vector3 startPosition;
 
-    // Start is called before the first frame update
+    public AudioClip itemPickupSound;
+
+
+    private float defaultPaddleWidth = 4.0f; // 패들의 기본 길이
+    private float currentPaddleWidth;         // 현재 패들의 길이
+
+    // 아이템 효과 적용 관련 변수
+    private bool isItemActive = false;         // 아이템 효과 활성화 여부
+
+
+
+
     void Start()
     {
         startPosition = transform.position;
         rigidbody = GetComponent<Rigidbody2D>();
+        currentPaddleWidth = defaultPaddleWidth;
     }
 
 
@@ -28,27 +40,57 @@ public class Paddle : MonoBehaviour
         if (Input.GetKey(Right)) { movement += 1f; }
         if (Input.GetKey(Left)) { movement -= 1f; }
         rigidbody.velocity = new Vector2( movement * speed,0);
+
+
     }
 
     public void Reset()
     {
         rigidbody.velocity = Vector3.zero;
         transform.position = startPosition;
+        currentPaddleWidth = defaultPaddleWidth;
+        isItemActive = false;
     }
 
 
     public void ApplyItemEffect(/* 어떤 매개변수가 필요한지에 따라 조절 */)
     {
-        // 아이템 효과를 패들에 적용
+        // 아이템에 따른 효과를 적용
         // 예: 크기 증가, 속도 증가, 무기 강화 등
-        IncreasePaddleSize(1f);
+
+        // 여기서는 패들의 길이를 늘리는 효과를 예시로 들었습니다.
+        IncreasePaddleWidth(2.0f); // 예: 2.0f는 임의의 길이 증가량입니다.
+
+        // 아이템 효과 활성화
+        isItemActive = true;
+
+
+        // 아이템을 먹을 때 소리를 재생
+        PlaySound(itemPickupSound);
     }
 
-    private void IncreasePaddleSize(float increaseAmount)
+    // 아이템 효과 해제
+    private void ResetPaddleWidth()
     {
-        // 현재 크기와 증가량을 고려하여 패들의 크기를 증가시킴
-        Vector3 currentScale = transform.localScale;
-        float newSize = currentScale.x + increaseAmount;
-        transform.localScale = new Vector3(newSize, currentScale.y, currentScale.z);
+        currentPaddleWidth = defaultPaddleWidth;
+        isItemActive = false;
     }
+
+
+    // 패들의 길이를 증가시키는 함수
+    private void IncreasePaddleWidth(float increaseAmount)
+    {
+        // x 축으로만 길이를 늘립니다.
+        transform.localScale = new Vector3(currentPaddleWidth + increaseAmount, transform.localScale.y, transform.localScale.z);
+    }
+
+    // 아이템 효과가 발동될 때 랜덤한 사운드 재생
+
+
+    // 사운드 재생 함수
+    private void PlaySound(AudioClip sound)
+    {
+        AudioSource.PlayClipAtPoint(sound, transform.position);
+    }
+
 }
