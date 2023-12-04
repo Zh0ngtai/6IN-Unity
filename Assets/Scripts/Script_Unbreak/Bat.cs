@@ -32,13 +32,12 @@ public class Bat : MonoBehaviour
         {
             isMovingRight = !isMovingRight;
             Flip();
-            Debug.Log("Ãæµ¹!!");
         }
     }
 
     void Flip()
     {
-        Vector3 newScale = transform.localScale;
+        Vector2 newScale = transform.localScale;
         newScale.x *= -1f;
         transform.localScale = newScale;
     }
