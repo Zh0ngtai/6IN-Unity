@@ -16,7 +16,7 @@ public class CharacterMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.x>7)
+        if(transform.position.x>10)
         {
             direction = 0f;
             SceneManager.LoadScene("GameScene");
