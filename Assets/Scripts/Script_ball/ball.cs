@@ -23,7 +23,6 @@ public class ball : MonoBehaviour
         if(gameObject.transform.position.y < -10)
         {
             Destroy(gameObject);
-            GameManager.I.LoseGame();
         }
     }
 
