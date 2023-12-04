@@ -19,4 +19,7 @@ public class Brick : MonoBehaviour
     {
         brickLife--;
     }
+
+
+    
 }

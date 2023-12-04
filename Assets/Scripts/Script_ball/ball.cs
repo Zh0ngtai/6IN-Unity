@@ -20,10 +20,12 @@ public class ball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(gameObject.transform.position.y < -10)
+        {
+            Destroy(gameObject);
+            GameManager.I.LoseGame();
+        }
     }
 
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-        
-    //}
+    
 }
