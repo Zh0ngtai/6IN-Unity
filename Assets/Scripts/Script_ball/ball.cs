@@ -6,6 +6,7 @@ public class Ball : MonoBehaviour
 {
     [SerializeField] private float speed = 10f;
     public Rigidbody2D rb;
+    [SerializeField] GameManager manager;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,7 @@ public class Ball : MonoBehaviour
         if(gameObject.transform.position.y < -10)
         {
             Destroy(gameObject);
+            manager.LoseGame();
         }
     }
 
