@@ -9,6 +9,8 @@ TagManager:
   - Wall
   - Ball
   - Paddle
+  - ItemEnlargePaddle
+  - ItemShrinkPaddle
   layers:
   - Default
   - TransparentFX

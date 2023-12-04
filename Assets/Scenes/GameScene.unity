@@ -5651,12 +5651,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7fd4076565302e4c86c0170fc719897, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Palyer1: 0
+  Palyer1: 1
   speed: 30
   rigidbody: {fileID: 0}
   Right: 100
   Left: 97
   itemPickupSound: {fileID: 8300000, guid: c37add0f68ea2b34cac31980e7c6f40b, type: 3}
+  originalWidth: 4
+  maxWidth: 6
 --- !u!82 &1491060327
 AudioSource:
   m_ObjectHideFlags: 0

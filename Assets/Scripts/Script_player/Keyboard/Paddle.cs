@@ -17,20 +17,14 @@ public class Paddle : MonoBehaviour
     public AudioClip itemPickupSound;
 
 
-    private float defaultPaddleWidth = 4.0f; // 패들의 기본 길이
-    private float currentPaddleWidth;         // 현재 패들의 길이
-
-    // 아이템 효과 적용 관련 변수
-    private bool isItemActive = false;         // 아이템 효과 활성화 여부
-
-
-
+    public float originalWidth = 2.0f; // 초기 Paddle의 너비
+    public float maxWidth = 4.0f; // 최대 Paddle의 너비
 
     void Start()
     {
         startPosition = transform.position;
         rigidbody = GetComponent<Rigidbody2D>();
-        currentPaddleWidth = defaultPaddleWidth;
+        SetPaddleWidth(originalWidth);
     }
 
 
@@ -48,43 +42,41 @@ public class Paddle : MonoBehaviour
     {
         rigidbody.velocity = Vector3.zero;
         transform.position = startPosition;
-        currentPaddleWidth = defaultPaddleWidth;
-        isItemActive = false;
+        
     }
-
-
-    public void ApplyItemEffect(/* 어떤 매개변수가 필요한지에 따라 조절 */)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        // 아이템에 따른 효과를 적용
-        // 예: 크기 증가, 속도 증가, 무기 강화 등
-
-        // 여기서는 패들의 길이를 늘리는 효과를 예시로 들었습니다.
-        IncreasePaddleWidth(2.0f); // 예: 2.0f는 임의의 길이 증가량입니다.
-
-        // 아이템 효과 활성화
-        isItemActive = true;
-
-
-        // 아이템을 먹을 때 소리를 재생
-        PlaySound(itemPickupSound);
+        if (other.CompareTag("ItemEnlargePaddle"))
+        {
+            ItemEnlargePaddle enlargeItem = other.GetComponent<ItemEnlargePaddle>();
+            if (enlargeItem != null)
+            {
+                SetPaddleWidth(originalWidth + enlargeItem.enlargementAmount);
+                Destroy(other.gameObject); // 아이템 소멸
+                PlaySound(itemPickupSound); // 아이템 획득 사운드 재생
+            }
+        }
+        else if (other.CompareTag("ItemShrinkPaddle"))
+        {
+            ItemShrinkPaddle shrinkItem = other.GetComponent<ItemShrinkPaddle>();
+            if (shrinkItem != null)
+            {
+                float newWidth = Mathf.Max(originalWidth - shrinkItem.reductionAmount, 0.1f);
+                SetPaddleWidth(newWidth);
+                Destroy(other.gameObject); // 아이템 소멸
+                PlaySound(itemPickupSound); // 아이템 획득 사운드 재생
+            }
+        }
     }
-
-    // 아이템 효과 해제
-    private void ResetPaddleWidth()
+    public void SetPaddleWidth(float width)
     {
-        currentPaddleWidth = defaultPaddleWidth;
-        isItemActive = false;
+        // 최소 너비와 최대 너비 사이의 값으로 제한
+        float clampedWidth = Mathf.Clamp(width, 0.1f, maxWidth);
+
+        Vector3 scale = transform.localScale;
+        scale.x = clampedWidth;
+        transform.localScale = scale;
     }
-
-
-    // 패들의 길이를 증가시키는 함수
-    private void IncreasePaddleWidth(float increaseAmount)
-    {
-        // x 축으로만 길이를 늘립니다.
-        transform.localScale = new Vector3(currentPaddleWidth + increaseAmount, transform.localScale.y, transform.localScale.z);
-    }
-
-    // 아이템 효과가 발동될 때 랜덤한 사운드 재생
 
 
     // 사운드 재생 함수
