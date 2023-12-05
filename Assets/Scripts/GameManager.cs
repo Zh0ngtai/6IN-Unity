@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     public GameObject Bricks;
     public GameObject LosePanel;
     public static GameManager I;
-    float limit = 10;
+    float limit = 60;
 
     void Awake()
 {
@@ -52,13 +52,13 @@ public class GameManager : MonoBehaviour
     }
     public void CreateBricks()
     {
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 72; i++)
         {
             GameObject newBrick = Instantiate(Brick);
             newBrick.transform.parent = GameObject.Find("Bricks").transform;
 
-            float x = (i % 10) * 2.4f - 15.0f;
-            float y = (i / 10) * 1.2f + 1.0f;
+            float x = (i % 18) * 1.5f - 16.4f;
+            float y = (i / 18) * 1.6f + 3.5f;
 
             newBrick.transform.position = new Vector3(x, y, 0);
             
