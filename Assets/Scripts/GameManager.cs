@@ -68,13 +68,13 @@ public class GameManager : MonoBehaviour
 
     public void Stage2CreateBricks()
     {
-        for (int i = 0; i < 72; i++)
+        for (int i = 0; i < 54; i++)
         {
             GameObject newBrick = Instantiate(Brick);
             newBrick.transform.parent = GameObject.Find("Bricks").transform;
 
             float x = (i % 18) * 1.5f - 16.4f;
-            float y = (i / 6) * 1.6f + 3.5f;
+            float y = (i / 6) * 0.8f + 2.5f;
 
             newBrick.transform.position = new Vector3(x, y, 0);
         }
@@ -82,13 +82,13 @@ public class GameManager : MonoBehaviour
 
     public void Stage3CreateBricks()
     {
-        for (int i = 0; i < 54; i++)
+        for (int i = 0; i < 90; i++)
         {
             GameObject newBrick = Instantiate(Brick);
             newBrick.transform.parent = GameObject.Find("Bricks").transform;
 
-            float x = (i % 9) * 1.5f - 16.4f;
-            float y = (i / 18) * 1.6f + 3.5f;
+            float x = (i % 9) * 3.0f - 15.6f;
+            float y = (i / 9) * 0.8f + 1.5f;
 
             newBrick.transform.position = new Vector3(x, y, 0);
         }
