@@ -6904,7 +6904,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3178019220be018439acabfaa8ac193a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 40
+  speed: 20
   rb: {fileID: 1755638153}
   brickHitSound: {fileID: 8300000, guid: 95ed450caff28364c9527fff8cbdc228, type: 3}
   paddleHitSound: {fileID: 8300000, guid: 2cf75e52e31c2f540a8e0eedcc8898a2, type: 3}

@@ -21,10 +21,11 @@ public class GameManager : MonoBehaviour
     public static GameManager I;
     float limit = 60;
 
+
     void Awake()
-{
-    I = this;
-}
+    {   
+        I = this;
+    }
     
    
     // Start is called before the first frame update
@@ -32,8 +33,8 @@ public class GameManager : MonoBehaviour
     
     void Start()
     {
-        CreateBricks();
-        CreateBats();
+        WhatKindOfStage();
+
     }
 
     // Update is called once per frame
@@ -51,7 +52,7 @@ public class GameManager : MonoBehaviour
 
         WinGame();
     }
-    public void CreateBricks()
+    public void Stage1CreateBricks()
     {
         for (int i = 0; i < 72; i++)
         {
@@ -62,22 +63,50 @@ public class GameManager : MonoBehaviour
             float y = (i / 18) * 1.6f + 3.5f;
 
             newBrick.transform.position = new Vector3(x, y, 0);
-            
-
         }
     }
-    public GameObject BatPrefab;  // Bat 1 프리팹을 저장할 변수
-    void CreateBats()
+
+    public void Stage2CreateBricks()
     {
-        for (int i = 0; i < 1; i++)
+        for (int i = 0; i < 54; i++)
         {
-            GameObject newBat = Instantiate(BatPrefab);
-            newBat.transform.parent = GameObject.Find("Bats").transform;
+            GameObject newBrick = Instantiate(Brick);
+            newBrick.transform.parent = GameObject.Find("Bricks").transform;
 
-            float x = 0.0f;
-            float y = 0.0f;
+            float x = (i % 18) * 1.5f - 16.4f;
+            float y = (i / 6) * 0.8f + 2.5f;
 
-            newBat.transform.position = new Vector3(x, y, 0);
+            newBrick.transform.position = new Vector3(x, y, 0);
+        }
+    }
+
+    public void Stage3CreateBricks()
+    {
+        for (int i = 0; i < 90; i++)
+        {
+            GameObject newBrick = Instantiate(Brick);
+            newBrick.transform.parent = GameObject.Find("Bricks").transform;
+
+            float x = (i % 9) * 3.0f - 15.6f;
+            float y = (i / 9) * 0.8f + 1.5f;
+
+            newBrick.transform.position = new Vector3(x, y, 0);
+        }
+    }
+
+    public void WhatKindOfStage()
+    {
+        if (SceneManager.GetActiveScene().name == "Stage1")
+        {
+            Stage1CreateBricks();
+        }
+        else if (SceneManager.GetActiveScene().name == "Stage2")
+        {
+            Stage2CreateBricks();
+        }
+        else if (SceneManager.GetActiveScene().name == "Stage3")
+        {
+            Stage3CreateBricks();
         }
     }
     public void WinGame()
