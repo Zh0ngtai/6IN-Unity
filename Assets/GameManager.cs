@@ -14,7 +14,8 @@ public class GameManager : MonoBehaviour
     public Text bestScoreText;
     public Text thisScoreText;
     public GameObject endPanel1;
-    public GameObject endPanel2;    
+    public GameObject endPanel2;
+    public GameObject stage;
     // Start is called before the first frame update
 
     private void Awake()
