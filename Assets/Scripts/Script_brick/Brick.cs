@@ -14,8 +14,8 @@ public class Brick : MonoBehaviour
     {
         if (brickLife == 0)
         {
-            // 90%의 확률로 아이템 생성
-            if (Random.Range(0f, 1f) <= 0.9f)
+            // 30%의 확률로 아이템 생성
+            if (Random.Range(0f, 1f) <= 0.3f)
             {
                 SpawnRandomItem();
             }

@@ -15,8 +15,10 @@ public class ItemShrinkPaddle : MonoBehaviour
             {
                 float newWidth = Mathf.Max(paddle.originalWidth - reductionAmount, 0.1f); // 최소 크기 제한
                 paddle.SetPaddleWidth(newWidth);
+
                 Destroy(gameObject); // 아이템 소멸
             }
         }
     }
+
 }
