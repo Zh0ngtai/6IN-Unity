@@ -11,12 +11,11 @@ GameObject:
   - component: {fileID: 1420053164710869167}
   - component: {fileID: 6449901502696791780}
   - component: {fileID: 6582111503969064846}
-  - component: {fileID: 912774803479656787}
   - component: {fileID: -3162909477732608740}
-  - component: {fileID: -6664317397062657815}
+  - component: {fileID: 8920247236616550302}
   m_Layer: 0
   m_Name: Chcolate
-  m_TagString: Untagged
+  m_TagString: ItemEnlargePaddle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: cdde687af1861cf408a9f62c0e013690, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -115,18 +114,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 1
---- !u!114 &912774803479656787
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6722486488689574387}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d733203a4b27654c8ca4c6bbca5c236, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &-3162909477732608740
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -172,7 +159,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.625, y: 0.625}
   m_EdgeRadius: 0
---- !u!114 &-6664317397062657815
+--- !u!114 &8920247236616550302
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -181,7 +168,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6722486488689574387}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13effe094e56caf4a9a97ac770f22ee9, type: 3}
+  m_Script: {fileID: 11500000, guid: 6fa2d76e56431a14f90e4a6060049c2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sizeIncreaseAmount: 10
+  enlargementAmount: 1

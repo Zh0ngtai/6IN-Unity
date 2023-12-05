@@ -2,20 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ball : MonoBehaviour
+public class ball : MonoBehaviour
 {
     [SerializeField] private float speed = 10f;
     public Rigidbody2D rb;
-    [SerializeField] GameManager manager;
+    float X, Y;
+    public AudioClip brickHitSound;  
+    public AudioClip paddleHitSound;
 
     // Start is called before the first frame update
     void Start()
     {
-        Vector2 direction = new Vector2(Random.Range(-0.5f, 0.5f), 0.5f);
-
         rb = GetComponent<Rigidbody2D>();
 
-        rb.AddForce(direction * speed, ForceMode2D.Impulse);
+        rb.AddForce(Random.insideUnitSphere * speed, ForceMode2D.Impulse);
     }
 
 
@@ -25,9 +25,30 @@ public class Ball : MonoBehaviour
         if(gameObject.transform.position.y < -10)
         {
             Destroy(gameObject);
-            manager.LoseGame();
+        }
+
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Brick"))
+        {
+            // 블럭에 부딪힐 때 소리를 재생
+            PlaySound(brickHitSound);
+        }
+        else if (collision.gameObject.CompareTag("Paddle"))
+        {
+            // 패들에 부딪힐 때 소리를 재생
+            PlaySound(paddleHitSound);
         }
     }
 
-    
+    private void PlaySound(AudioClip sound)
+    {
+        AudioSource.PlayClipAtPoint(sound, transform.position);
+    }
+
+
+
+
 }

@@ -14,11 +14,17 @@ public class Paddle : MonoBehaviour
     private float movement;
     private Vector3 startPosition;
 
-    // Start is called before the first frame update
+    public AudioClip itemPickupSound;
+
+
+    public float originalWidth = 2.0f; // 초기 Paddle의 너비
+    public float maxWidth = 4.0f; // 최대 Paddle의 너비
+
     void Start()
     {
         startPosition = transform.position;
         rigidbody = GetComponent<Rigidbody2D>();
+        SetPaddleWidth(originalWidth);
     }
 
 
@@ -28,27 +34,55 @@ public class Paddle : MonoBehaviour
         if (Input.GetKey(Right)) { movement += 1f; }
         if (Input.GetKey(Left)) { movement -= 1f; }
         rigidbody.velocity = new Vector2( movement * speed,0);
+
+
     }
 
     public void Reset()
     {
         rigidbody.velocity = Vector3.zero;
         transform.position = startPosition;
+        
     }
-
-
-    public void ApplyItemEffect(/* 어떤 매개변수가 필요한지에 따라 조절 */)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        // 아이템 효과를 패들에 적용
-        // 예: 크기 증가, 속도 증가, 무기 강화 등
-        IncreasePaddleSize(1f);
+        if (other.CompareTag("ItemEnlargePaddle"))
+        {
+            ItemEnlargePaddle enlargeItem = other.GetComponent<ItemEnlargePaddle>();
+            if (enlargeItem != null)
+            {
+                SetPaddleWidth(originalWidth + enlargeItem.enlargementAmount);
+                Destroy(other.gameObject); // 아이템 소멸
+                PlaySound(itemPickupSound); // 아이템 획득 사운드 재생
+            }
+        }
+        else if (other.CompareTag("ItemShrinkPaddle"))
+        {
+            ItemShrinkPaddle shrinkItem = other.GetComponent<ItemShrinkPaddle>();
+            if (shrinkItem != null)
+            {
+                float newWidth = Mathf.Max(originalWidth - shrinkItem.reductionAmount, 0.1f);
+                SetPaddleWidth(newWidth);
+                Destroy(other.gameObject); // 아이템 소멸
+                PlaySound(itemPickupSound); // 아이템 획득 사운드 재생
+            }
+        }
+    }
+    public void SetPaddleWidth(float width)
+    {
+        // 최소 너비와 최대 너비 사이의 값으로 제한
+        float clampedWidth = Mathf.Clamp(width, 0.1f, maxWidth);
+
+        Vector3 scale = transform.localScale;
+        scale.x = clampedWidth;
+        transform.localScale = scale;
     }
 
-    private void IncreasePaddleSize(float increaseAmount)
+
+    // 사운드 재생 함수
+    private void PlaySound(AudioClip sound)
     {
-        // 현재 크기와 증가량을 고려하여 패들의 크기를 증가시킴
-        Vector3 currentScale = transform.localScale;
-        float newSize = currentScale.x + increaseAmount;
-        transform.localScale = new Vector3(newSize, currentScale.y, currentScale.z);
+        AudioSource.PlayClipAtPoint(sound, transform.position);
     }
+
 }
