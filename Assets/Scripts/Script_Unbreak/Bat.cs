@@ -27,8 +27,14 @@ public class Bat : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        // 벽에 부딪혔을 때 이동 방향을 반전
+        // 벽에 부딪혔을 때 방향 회전
         if (collision.gameObject.CompareTag("Wall"))
+        {
+            isMovingRight = !isMovingRight;
+            Flip();
+        }
+        // 공에 부딪히면 방향 회전
+        if (collision.gameObject.CompareTag("Ball"))
         {
             isMovingRight = !isMovingRight;
             Flip();
