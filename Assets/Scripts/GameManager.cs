@@ -13,20 +13,46 @@ public class GameManager : MonoBehaviour
 
     public Text bestScoreText;
     public Text thisScoreText;
-    public GameObject endPanel1;
-    public GameObject endPanel2;
+    public GameObject stagePanel;
     public GameObject WinPanel;
     public GameObject Bricks;
     public GameObject LosePanel;
     public static GameManager I;
     float limit = 60;
-
+    public static GameManager Instance
+    {
+        get
+        {
+            if (I == null)
+            {
+                I = FindObjectOfType<GameManager>();
+                if (I == null)
+                {
+                    I = new GameObject("Spawned GameManager", typeof(GameManager)).GetComponent<GameManager>();
+                }
+            }
+            return I;
+        }
+        private set
+        {
+            I = value;
+        }
+    }
 
     void Awake()
-    {   
-        I = this;
+    {
+        if (I == null)
+        {
+            I = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
-    
+
+  
    
     // Start is called before the first frame update
 

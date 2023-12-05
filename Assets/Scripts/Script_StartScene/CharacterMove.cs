@@ -16,12 +16,12 @@ public class CharacterMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.y<-10)
+        if (transform.position.y < -10)
         {
-            SceneManager.LoadScene("GameScene");
+            GameManager.I.stagePanel.SetActive(true);
         }
 
-        if(transform.position.x>12)
+        if (transform.position.x>12)
         {
             direction = 0;
         }
