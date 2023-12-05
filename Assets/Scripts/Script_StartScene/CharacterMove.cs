@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterMove : MonoBehaviour
 {
@@ -15,6 +16,11 @@ public class CharacterMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(transform.position.y<-10)
+        {
+            SceneManager.LoadScene("GameScene");
+        }
+
         if(transform.position.x>12)
         {
             direction = 0;
