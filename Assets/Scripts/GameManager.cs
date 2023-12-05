@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         CreateBricks();
+        CreateBats();
     }
 
     // Update is called once per frame
@@ -65,8 +66,20 @@ public class GameManager : MonoBehaviour
 
         }
     }
+    public GameObject BatPrefab;  // Bat 1 프리팹을 저장할 변수
+    void CreateBats()
+    {
+        for (int i = 0; i < 1; i++)
+        {
+            GameObject newBat = Instantiate(BatPrefab);
+            newBat.transform.parent = GameObject.Find("Bats").transform;
 
+            float x = 0.0f;
+            float y = 0.0f;
 
+            newBat.transform.position = new Vector3(x, y, 0);
+        }
+    }
     public void WinGame()
     {
         int bricksnum = GameObject.Find("Bricks").transform.childCount;
