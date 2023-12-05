@@ -21,10 +21,11 @@ public class GameManager : MonoBehaviour
     public static GameManager I;
     float limit = 60;
 
+
     void Awake()
-{
-    I = this;
-}
+    {   
+        I = this;
+    }
     
    
     // Start is called before the first frame update
@@ -32,7 +33,8 @@ public class GameManager : MonoBehaviour
     
     void Start()
     {
-        CreateBricks();
+        WhatKindOfStage();
+
     }
 
     // Update is called once per frame
@@ -50,7 +52,7 @@ public class GameManager : MonoBehaviour
 
         WinGame();
     }
-    public void CreateBricks()
+    public void Stage1CreateBricks()
     {
         for (int i = 0; i < 72; i++)
         {
@@ -61,12 +63,52 @@ public class GameManager : MonoBehaviour
             float y = (i / 18) * 1.6f + 3.5f;
 
             newBrick.transform.position = new Vector3(x, y, 0);
-            
-
         }
     }
 
+    public void Stage2CreateBricks()
+    {
+        for (int i = 0; i < 72; i++)
+        {
+            GameObject newBrick = Instantiate(Brick);
+            newBrick.transform.parent = GameObject.Find("Bricks").transform;
 
+            float x = (i % 18) * 1.5f - 16.4f;
+            float y = (i / 6) * 1.6f + 3.5f;
+
+            newBrick.transform.position = new Vector3(x, y, 0);
+        }
+    }
+
+    public void Stage3CreateBricks()
+    {
+        for (int i = 0; i < 54; i++)
+        {
+            GameObject newBrick = Instantiate(Brick);
+            newBrick.transform.parent = GameObject.Find("Bricks").transform;
+
+            float x = (i % 9) * 1.5f - 16.4f;
+            float y = (i / 18) * 1.6f + 3.5f;
+
+            newBrick.transform.position = new Vector3(x, y, 0);
+        }
+    }
+
+    public void WhatKindOfStage()
+    {
+        if (SceneManager.GetActiveScene().name == "Stage1")
+        {
+            Stage1CreateBricks();
+        }
+        else if (SceneManager.GetActiveScene().name == "Stage2")
+        {
+            Stage2CreateBricks();
+        }
+        else if (SceneManager.GetActiveScene().name == "Stage3")
+        {
+            Stage3CreateBricks();
+        }
+    }
     public void WinGame()
     {
         int bricksnum = GameObject.Find("Bricks").transform.childCount;
