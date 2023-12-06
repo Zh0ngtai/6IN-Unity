@@ -164,4 +164,4 @@ MonoBehaviour:
   speed: 40
   rb: {fileID: 6636399230350801010}
   brickHitSound: {fileID: 8300000, guid: 95ed450caff28364c9527fff8cbdc228, type: 3}
-  paddleHitSound: {fileID: 8300000, guid: 2cf75e52e31c2f540a8e0eedcc8898a2, type: 3}
+  paddleHitSound: {fileID: 8300000, guid: 04224cd1bed5a0c4aa7c836169ab46f6, type: 3}
