@@ -94,7 +94,7 @@ public class Paddle : MonoBehaviour
             ItemAddTime ItemTime = other.GetComponent<ItemAddTime>();
             if (ItemTime != null)
             {
-
+                GameManager.I.AddTime();
                 Destroy(other.gameObject); // 아이템 소멸
                 PlaySound(itemPickupSound); // 아이템 획득 사운드 재생
             }

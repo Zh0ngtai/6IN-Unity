@@ -7,7 +7,7 @@ public class Timer : MonoBehaviour
 {
     public float CoolTime { get; set; }
     private float coolTime = 60;
-    public float UpdateTime { get { return updateTime; } set { if (value > 0) { updateTime = value; } } }
+    public float UpdateTime { get { return updateTime; } set { if (value > 0) { updateTime = value; } else { updateTime = 0; } } }
     private float updateTime = 0;
 
     public Image Slider;
