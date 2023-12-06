@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     public static GameManager I;
     public Timer timer; 
     public Image TimerSlider;
-    float limit = 60f;
+    
    
 
 
@@ -42,22 +42,16 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        { 
-            if (limit > 0)
-            {
-                limit -= Time.deltaTime;
-                //Time.timeScale = 0.0f;
-                //limit = 0.0f;
-                //LoseGame();
-            }
-            else if(limit<0)
-            {
-                limit = 0;
-                LoseGame();
-            }
-            timeText.text = limit.ToString("N2");
+
+        timeText.text = timer.CoolTime.ToString("N2");
+        if (timer.CoolTime < 0)
+        {
+            LoseGame();
+
         }
         WinGame();
+
+       
     }
     public void Stage1CreateBricks()
     {
@@ -81,7 +75,7 @@ public class GameManager : MonoBehaviour
             newBrick.transform.parent = GameObject.Find("Bricks").transform;
 
             float x = (i % 18) * 1.5f - 16.4f;
-            float y = (i / 6) * 0.8f + 2.5f;
+            float y = (i / 6) * 0.8f + 2.2f;
 
             newBrick.transform.position = new Vector3(x, y, 0);
         }
@@ -123,19 +117,20 @@ public class GameManager : MonoBehaviour
         {
             Time.timeScale = 0.0f;
             WinPanel.SetActive(true);
-            thisScoreText.text = limit.ToString("N2");
+           
             if (PlayerPrefs.HasKey("bestScore") == false)
             {
-                PlayerPrefs.SetFloat("bestScore", limit);
+                PlayerPrefs.SetFloat("bestScore", timer.CoolTime);
             }
             else
             {
-                if (PlayerPrefs.GetFloat("bestScore") > limit)
+                if (PlayerPrefs.GetFloat("bestScore") > timer.CoolTime) 
                 {
-                    PlayerPrefs.SetFloat("bestScore", limit);
+                    PlayerPrefs.SetFloat("bestScore", timer.CoolTime);
                 }
             }
             bestScoreText.text = PlayerPrefs.GetFloat("bestScore").ToString("N2");
+            thisScoreText.text = timer.CoolTime.ToString("N2");
         }       
     }
     public void LoseGame()
