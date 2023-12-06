@@ -6063,7 +6063,7 @@ MonoBehaviour:
   itemPickupSound: {fileID: 8300000, guid: c37add0f68ea2b34cac31980e7c6f40b, type: 3}
   originalWidth: 4
   maxWidth: 6
-  ballPrefab: {fileID: 0}
+  ballPrefab: {fileID: 5244459101901920343, guid: 36998ed48e8715e409565d4314fd4770, type: 3}
   maxBalls: 3
 --- !u!82 &1491060327
 AudioSource:
@@ -6422,7 +6422,6 @@ MonoBehaviour:
   timeText: {fileID: 1619470915}
   bestScoreText: {fileID: 849393073}
   thisScoreText: {fileID: 1821102338}
-  stagePanel: {fileID: 0}
   WinPanel: {fileID: 727267358}
   Bricks: {fileID: 229575137}
   LosePanel: {fileID: 1236404419}
@@ -6630,7 +6629,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1755638151
 MonoBehaviour:
   m_ObjectHideFlags: 0
