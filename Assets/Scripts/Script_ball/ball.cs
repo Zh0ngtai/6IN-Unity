@@ -9,12 +9,13 @@ public class ball : MonoBehaviour
     float X, Y;
     public AudioClip brickHitSound;  
     public AudioClip paddleHitSound;
+    private GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
+        gameManager = GameManager.I; // 게임 매니저 참조 얻기
         rb.AddForce(Random.insideUnitSphere * speed, ForceMode2D.Impulse);
     }
 
@@ -25,9 +26,8 @@ public class ball : MonoBehaviour
         if(gameObject.transform.position.y < -10)
         {
             Destroy(gameObject);
-            GameManager.I.LoseGame();
+            GameManager.I.CheckBalls();
         }
-
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
