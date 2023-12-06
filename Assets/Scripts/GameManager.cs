@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public GameObject WinPanel;
     public GameObject Bricks;
     public GameObject LosePanel;
+    public GameObject BatPrefabs;
     public static GameManager I;
     public Timer timer; 
     public Image TimerSlider;
@@ -94,7 +95,32 @@ public class GameManager : MonoBehaviour
             newBrick.transform.position = new Vector3(x, y, 0);
         }
     }
+    public void Stage2CreateBats()
+    {
+        for (int i = 0; i < 1; i++)
+        {
+            GameObject newBat = Instantiate(BatPrefabs);
+            newBat.transform.parent = GameObject.Find("Bats").transform;
 
+            float x = 0.0f;
+            float y = 0.0f;
+
+            newBat.transform.position = new Vector3(x, y, 0);
+        }
+    }
+    public void Stage3CreateBats()
+    {
+        for (int i = 0; i < 2; i++)
+        {
+            GameObject newBat = Instantiate(BatPrefabs);
+            newBat.transform.parent = GameObject.Find("Bats").transform;
+
+            float x = 0.0f;
+            float y = i * -2.0f;
+
+            newBat.transform.position = new Vector3(x, y, 0);
+        }
+    }
     public void WhatKindOfStage()
     {
         if (SceneManager.GetActiveScene().name == "Stage1")
@@ -104,10 +130,12 @@ public class GameManager : MonoBehaviour
         else if (SceneManager.GetActiveScene().name == "Stage2")
         {
             Stage2CreateBricks();
+            Stage2CreateBats();
         }
         else if (SceneManager.GetActiveScene().name == "Stage3")
         {
             Stage3CreateBricks();
+            Stage3CreateBats();
         }
     }
     public void WinGame()
@@ -124,7 +152,7 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                if (PlayerPrefs.GetFloat("bestScore") > timer.CoolTime) 
+                if (PlayerPrefs.GetFloat("bestScore") < timer.CoolTime) 
                 {
                     PlayerPrefs.SetFloat("bestScore", timer.CoolTime);
                 }

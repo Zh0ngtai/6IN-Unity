@@ -3,7 +3,17 @@ guid: 02e4f6d5719191f4ba1781dd9e33185b
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Brick: {instanceID: 0}
+  - timeText: {instanceID: 0}
+  - bestScoreText: {instanceID: 0}
+  - thisScoreText: {instanceID: 0}
+  - WinPanel: {instanceID: 0}
+  - Bricks: {instanceID: 0}
+  - LosePanel: {instanceID: 0}
+  - BatPrefabs: {fileID: 6878409949840067509, guid: 0ed8c200d22276c4495af13e82c27554, type: 3}
+  - timer: {instanceID: 0}
+  - TimerSlider: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
