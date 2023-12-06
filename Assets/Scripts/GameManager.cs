@@ -12,7 +12,6 @@ public class GameManager : MonoBehaviour
     public Text timeText;
     public Text bestScoreText;
     public Text thisScoreText;
-    public GameObject stagePanel;
     public GameObject WinPanel;
     public GameObject Bricks;
     public GameObject LosePanel;
@@ -42,18 +41,15 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         { 
-            if (limit < 0)
+            if (limit > 0)
             {
                 limit -= Time.deltaTime;
-                Time.timeScale = 0.0f;
-                limit = 0.0f;
-                LoseGame();
+                //Time.timeScale = 0.0f;
+                //limit = 0.0f;
+                //LoseGame();
             }
             timeText.text = limit.ToString("N2");
         }
-
-
-
         WinGame();
     }
     public void Stage1CreateBricks()
