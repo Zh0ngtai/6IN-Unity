@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Stage2 : MonoBehaviour
+public class NextStage : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-      
+        
     }
 
     // Update is called once per frame
@@ -16,7 +16,8 @@ public class Stage2 : MonoBehaviour
     {
         
     }
-    public void StageSceneotwo()
+
+    public void Next()
     {
         SceneManager.LoadScene("Stage2");
     }
