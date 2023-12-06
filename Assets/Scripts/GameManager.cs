@@ -124,7 +124,6 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0.0f;
             WinPanel.SetActive(true);
             thisScoreText.text = limit.ToString("N2");
-
             if (PlayerPrefs.HasKey("bestScore") == false)
             {
                 PlayerPrefs.SetFloat("bestScore", limit);
@@ -143,6 +142,7 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0.0f;
         LosePanel.SetActive(true);
+        
     }
     public void CheckBalls()
     {

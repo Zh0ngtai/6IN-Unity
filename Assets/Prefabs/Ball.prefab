@@ -113,7 +113,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &7804165226547907527
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3178019220be018439acabfaa8ac193a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 40
+  speed: 20
   rb: {fileID: 6636399230350801010}
   brickHitSound: {fileID: 8300000, guid: 95ed450caff28364c9527fff8cbdc228, type: 3}
   paddleHitSound: {fileID: 8300000, guid: 04224cd1bed5a0c4aa7c836169ab46f6, type: 3}
