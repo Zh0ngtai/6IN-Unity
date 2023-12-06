@@ -12,6 +12,7 @@ TagManager:
   - ItemEnlargePaddle
   - ItemShrinkPaddle
   - ItemAddBall
+  - ItemAddTime
   layers:
   - Default
   - TransparentFX
