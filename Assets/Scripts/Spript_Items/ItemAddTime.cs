@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ItemAddTime : MonoBehaviour
 {
@@ -9,8 +10,8 @@ public class ItemAddTime : MonoBehaviour
     {
         if (other.CompareTag("Paddle"))
         {
-            // 아이템과 패들이 충돌한 경우
 
+            GameManager.I.AddTime();
             Destroy(gameObject); // 아이템 파괴
         }
     }

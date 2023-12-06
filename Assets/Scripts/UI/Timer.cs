@@ -5,21 +5,23 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    private float CoolTime = 60f;
-    private float UpdateTime = 0.0f;
-  
+    public float CoolTime { get; set; }
+    private float coolTime = 60;
+    public float UpdateTime { get { return updateTime; } set { if (value > 0) { updateTime = value; } } }
+    private float updateTime = 0;
+
     public Image Slider;
     private void Update()
     {
-        if(UpdateTime > CoolTime)
+        if (updateTime > coolTime)
         {
-            UpdateTime = 0.0f;
+            updateTime = 0.0f;
             Slider.fillAmount = 0.0f;
         }
         else
         {
-            UpdateTime = UpdateTime + Time.deltaTime;
-            Slider.fillAmount = 1.0f - (Mathf.Lerp(0, 100, UpdateTime/CoolTime) / 100);
+            updateTime = updateTime + Time.deltaTime;
+            Slider.fillAmount = 1.0f - (Mathf.Lerp(0, 100, updateTime / coolTime) / 100);
         }
     }
 

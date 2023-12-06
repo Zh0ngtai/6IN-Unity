@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     public GameObject Bricks;
     public GameObject LosePanel;
     public static GameManager I;
+    public Timer timer; 
+    public Image TimerSlider;
     float limit = 60f;
    
 
@@ -156,5 +158,10 @@ public class GameManager : MonoBehaviour
         {
             LoseGame();
         }
+    }
+    public void AddTime()
+    {
+        timer.UpdateTime -= 7.0f;
+       
     }
 }
