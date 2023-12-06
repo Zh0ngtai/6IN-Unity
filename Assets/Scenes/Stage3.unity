@@ -6650,6 +6650,7 @@ MonoBehaviour:
   WinPanel: {fileID: 727267358}
   Bricks: {fileID: 229575137}
   LosePanel: {fileID: 1236404419}
+  BatPrefabs: {fileID: 6878409949840067509, guid: 0ed8c200d22276c4495af13e82c27554, type: 3}
   timer: {fileID: 1636612967}
   TimerSlider: {fileID: 1636612965}
 --- !u!4 &1629918300
