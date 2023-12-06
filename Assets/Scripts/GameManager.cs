@@ -123,6 +123,20 @@ public class GameManager : MonoBehaviour
         {
             Time.timeScale = 0.0f;
             WinPanel.SetActive(true);
+            thisScoreText.text = limit.ToString("N2");
+
+            if (PlayerPrefs.HasKey("bestScore") == false)
+            {
+                PlayerPrefs.SetFloat("bestScore", limit);
+            }
+            else
+            {
+                if (PlayerPrefs.GetFloat("bestScore") > limit)
+                {
+                    PlayerPrefs.SetFloat("bestScore", limit);
+                }
+            }
+            bestScoreText.text = PlayerPrefs.GetFloat("bestScore").ToString("N2");
         }       
       
     }
@@ -130,21 +144,6 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0.0f;
         LosePanel.SetActive(true);
-        thisScoreText.text = limit.ToString("N2");
-
-
-        if (PlayerPrefs.HasKey("bestScore") == false)
-        {
-            PlayerPrefs.SetFloat("bestScore", limit);
-        }
-        else
-        {
-            if (PlayerPrefs.GetFloat("bestScore") > limit)
-            {
-                PlayerPrefs.SetFloat("bestScore", limit);
-            }
-        }
-        bestScoreText.text = PlayerPrefs.GetFloat("bestScore").ToString("N2");
     }
     public void CheckBalls()
     {
