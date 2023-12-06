@@ -48,6 +48,11 @@ public class GameManager : MonoBehaviour
                 //limit = 0.0f;
                 //LoseGame();
             }
+            else if(limit<0)
+            {
+                limit = 0;
+                LoseGame();
+            }
             timeText.text = limit.ToString("N2");
         }
         WinGame();

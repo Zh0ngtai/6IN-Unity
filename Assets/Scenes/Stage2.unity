@@ -6265,7 +6265,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 2cf75e52e31c2f540a8e0eedcc8898a2, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ca1873394caf5874daae3969c4730b9d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -6530,8 +6530,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Brick: {fileID: 8159786805893287528, guid: d3352e9e2edb0954c948827942326e98, type: 3}
   timeText: {fileID: 1949649998}
-  bestScoreText: {fileID: 977316268}
-  thisScoreText: {fileID: 1531451153}
+  bestScoreText: {fileID: 849393073}
+  thisScoreText: {fileID: 1821102338}
   WinPanel: {fileID: 727267358}
   Bricks: {fileID: 229575137}
   LosePanel: {fileID: 1236404419}
