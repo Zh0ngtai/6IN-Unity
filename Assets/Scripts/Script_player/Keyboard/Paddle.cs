@@ -89,7 +89,16 @@ public class Paddle : MonoBehaviour
                 }
             }
         }
-       
+        else if (other.CompareTag("ItemAddTime"))
+        {
+            ItemAddTime ItemTime = other.GetComponent<ItemAddTime>();
+            if (ItemTime != null)
+            {
+
+                Destroy(other.gameObject); // 아이템 소멸
+                PlaySound(itemPickupSound); // 아이템 획득 사운드 재생
+            }
+        }
     }
     public void SetPaddleWidth(float width)
     {

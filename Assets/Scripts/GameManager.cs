@@ -10,51 +10,46 @@ public class GameManager : MonoBehaviour
     
 
     public Text timeText;
-
     public Text bestScoreText;
     public Text thisScoreText;
-    public GameObject endPanel1;
-    public GameObject endPanel2;
     public GameObject WinPanel;
     public GameObject Bricks;
     public GameObject LosePanel;
-    public GameObject Slider;
     public static GameManager I;
-    public Image SliderTimer;
-    public Timer timer;
-    float limit = 60;
+    float limit = 60f;
+   
 
 
     void Awake()
     {   
+       
         I = this;
     }
-    
-   
+
+
     // Start is called before the first frame update
 
-    
+
     void Start()
     {
         WhatKindOfStage();
+        Time.timeScale = 1.0f;
 
     }
 
     // Update is called once per frame
     void Update()
     {
-           
-        
-        if (limit < 0)
-        {
-            limit -= Time.deltaTime;
-            Time.timeScale = 0.0f; limit = 0.0f;
-            LoseGame();
+        { 
+            if (limit > 0)
+            {
+                limit -= Time.deltaTime;
+                //Time.timeScale = 0.0f;
+                //limit = 0.0f;
+                //LoseGame();
+            }
+            timeText.text = limit.ToString("N2");
         }
-        timeText.text = limit.ToString("N2");
-
-
-
         WinGame();
     }
     public void Stage1CreateBricks()
@@ -143,11 +138,5 @@ public class GameManager : MonoBehaviour
             }
         }
         bestScoreText.text = PlayerPrefs.GetFloat("bestScore").ToString("N2");
-    }
-
-    public void AddTime()
-    {
-        timer.UpdateTime -= 5;
-       // SliderTimer.fillAmount += 0.05f;
     }
 }

@@ -18,7 +18,7 @@ public class CharacterMove : MonoBehaviour
     {
         if(transform.position.y<-10)
         {
-            SceneManager.LoadScene("GameScene");
+           direction = 0;
         }
 
         if(transform.position.x>12)
