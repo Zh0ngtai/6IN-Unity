@@ -6368,6 +6368,8 @@ MonoBehaviour:
   WinPanel: {fileID: 727267358}
   Bricks: {fileID: 229575137}
   LosePanel: {fileID: 1236404419}
+  timer: {fileID: 0}
+  TimerSlider: {fileID: 0}
 --- !u!4 &1629918300
 Transform:
   m_ObjectHideFlags: 0
