@@ -124,7 +124,7 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                if (PlayerPrefs.GetFloat("bestScore") > timer.CoolTime) 
+                if (PlayerPrefs.GetFloat("bestScore") < timer.CoolTime) 
                 {
                     PlayerPrefs.SetFloat("bestScore", timer.CoolTime);
                 }
