@@ -18,7 +18,10 @@ public class GameManager : MonoBehaviour
     public GameObject WinPanel;
     public GameObject Bricks;
     public GameObject LosePanel;
+    public GameObject Slider;
     public static GameManager I;
+    public Image SliderTimer;
+    public Timer timer;
     float limit = 60;
 
 
@@ -140,5 +143,11 @@ public class GameManager : MonoBehaviour
             }
         }
         bestScoreText.text = PlayerPrefs.GetFloat("bestScore").ToString("N2");
+    }
+
+    public void AddTime()
+    {
+        timer.UpdateTime -= 5;
+       // SliderTimer.fillAmount += 0.05f;
     }
 }

@@ -89,6 +89,7 @@ public class Paddle : MonoBehaviour
                 }
             }
         }
+       
     }
     public void SetPaddleWidth(float width)
     {
