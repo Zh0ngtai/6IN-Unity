@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     
 
     public Text timeText;
-    public Text scoreText;
+
     public Text bestScoreText;
     public Text thisScoreText;
     public GameObject endPanel1;
@@ -40,9 +40,11 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        limit -= Time.deltaTime;       
+           
+        
         if (limit < 0)
         {
+            limit -= Time.deltaTime;
             Time.timeScale = 0.0f; limit = 0.0f;
             LoseGame();
         }
