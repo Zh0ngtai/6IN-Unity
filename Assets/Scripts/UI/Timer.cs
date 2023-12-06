@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    public float CoolTime { get; set; }
+    public float CoolTime { get { return coolTime - updateTime; } }
     private float coolTime = 60;
     public float UpdateTime { get { return updateTime; } set { if (value > 0) { updateTime = value; } } }
     private float updateTime = 0;

@@ -6566,8 +6566,8 @@ MonoBehaviour:
   WinPanel: {fileID: 727267358}
   Bricks: {fileID: 229575137}
   LosePanel: {fileID: 1236404419}
-  timer: {fileID: 0}
-  TimerSlider: {fileID: 0}
+  timer: {fileID: 1636612967}
+  TimerSlider: {fileID: 1636612965}
 --- !u!4 &1629918300
 Transform:
   m_ObjectHideFlags: 0
@@ -6596,7 +6596,7 @@ GameObject:
   - component: {fileID: 1636612965}
   - component: {fileID: 1636612967}
   m_Layer: 5
-  m_Name: Image
+  m_Name: TimerSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
