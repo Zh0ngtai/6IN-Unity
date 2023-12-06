@@ -144,4 +144,17 @@ public class GameManager : MonoBehaviour
         }
         bestScoreText.text = PlayerPrefs.GetFloat("bestScore").ToString("N2");
     }
+    public void CheckBalls()
+    {
+        Invoke("CheckBallreal", 0.03f); 
+    }
+    public void CheckBallreal() 
+    {
+        GameObject ballfound = GameObject.Find("Ball(Clone)");
+        Debug.Log(ballfound);
+        if (ballfound == null)
+        {
+            LoseGame();
+        }
+    }
 }

@@ -117,6 +117,7 @@ public class Paddle : MonoBehaviour
         ball.Add(newBall); // 생성된 볼을 리스트에 추가
     }
 
+
     // 사운드 재생 함수
     private void PlaySound(AudioClip sound)
     {
