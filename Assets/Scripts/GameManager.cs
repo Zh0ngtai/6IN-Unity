@@ -138,7 +138,6 @@ public class GameManager : MonoBehaviour
             }
             bestScoreText.text = PlayerPrefs.GetFloat("bestScore").ToString("N2");
         }       
-      
     }
     public void LoseGame()
     {
@@ -164,3 +163,5 @@ public class GameManager : MonoBehaviour
        
     }
 }
+
+//
