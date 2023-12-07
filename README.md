@@ -21,24 +21,25 @@
 > - 키보드 입력값을 받아 좌우로 움직임
 
 #Ball
-
+ ![Ball](https://github.com/Zh0ngtai/6IN-Unity/assets/149444430/a0968c87-ae6a-434a-9c0d-c3c9513134d6)
 > - 공 움직임 : rigidbody 부여하고 무중력 상태로 만들었습니다, physics 2D 적용해서 friction (마찰력) 은 0으로, bouciness (튕기는 정도) 는 1로 설정
              벽돌, 패드와 충돌 시 자연스럽게 튕기고 일정한 속도로 움직임
 > - 공 시작 : 공이 생성됐을 때 x 축으로 -0.5 ~ 0.5 사이의 랜덤 값의 힘이 주어지고 y 축으로는 0.5의 고정된 값의 힘이 주어져서 적당한 속도와 방향으로 나아감
 > - 공-벽 상호작용 : 벽과 부딪힐 때는 각도에 따라 그에 맞는 각도로 튕길 수 있게 script 를 구성하고 Euler Angle을 활용
- ![Ball](https://github.com/Zh0ngtai/6IN-Unity/assets/149444430/a0968c87-ae6a-434a-9c0d-c3c9513134d6)
+
  ![image](https://github.com/Zh0ngtai/6IN-Unity/assets/149444430/48fc66cd-2c27-422d-949b-345c98ac507a)
 
 #Item
+#에이드
 > - 패들과 충돌 시 타임 게이지가 증가함
 ![Ade](https://github.com/Zh0ngtai/6IN-Unity/assets/149444430/fda26411-f43e-4f70-90a1-8db9536858be)
-
+#초콜릿
 > - 패들의 크기를 늘여줌
 ![Chocolate](https://github.com/Zh0ngtai/6IN-Unity/assets/149444430/d62a61eb-5429-47cc-97d0-0ab4d6b66506)
-
+#돌
 > - 패들의 크기를 줄임(디버프 아이템)
 ![Rock](https://github.com/Zh0ngtai/6IN-Unity/assets/149444430/d7cdf5d7-78f8-43fb-9d77-929716b4c7e9)
-
+#콜라
 > - 공의 개수를 늘임
 ![image](https://github.com/Zh0ngtai/6IN-Unity/assets/149444430/c8db3623-1eb3-4dbc-be99-58773f651689)
 
