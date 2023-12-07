@@ -26,8 +26,9 @@
              벽돌, 패드와 충돌 시 자연스럽게 튕기고 일정한 속도로 움직임
 > - 공 시작 : 공이 생성됐을 때 x 축으로 -0.5 ~ 0.5 사이의 랜덤 값의 힘이 주어지고 y 축으로는 0.5의 고정된 값의 힘이 주어져서 적당한 속도와 방향으로 나아감
 > - 공-벽 상호작용 : 벽과 부딪힐 때는 각도에 따라 그에 맞는 각도로 튕길 수 있게 script 를 구성하고 Euler Angle을 활용
+ ![Ball](https://github.com/Zh0ngtai/6IN-Unity/assets/149444430/a0968c87-ae6a-434a-9c0d-c3c9513134d6)
  ![image](https://github.com/Zh0ngtai/6IN-Unity/assets/149444430/48fc66cd-2c27-422d-949b-345c98ac507a)
-![Ball](https://github.com/Zh0ngtai/6IN-Unity/assets/149444430/a0968c87-ae6a-434a-9c0d-c3c9513134d6)
+
 #Item
 > - 패들과 충돌 시 타임 게이지가 증가함
 ![Ade](https://github.com/Zh0ngtai/6IN-Unity/assets/149444430/fda26411-f43e-4f70-90a1-8db9536858be)
