@@ -13,7 +13,7 @@
 > - Ball의 Y좌표값이 -10이하일 때 게임이 종료되도록 설정
 #Brick
 ![image](https://github.com/Zh0ngtai/6IN-Unity/assets/149444430/47e02a08-3a99-4958-92c9-db52d0d60962)
-> - 공과 충돌 시 아이템 생성
+> - 공과 충돌 시 아이템 생성 30%
 > - BrickLife 매개변수를 사용하여 Ball과 충돌 횟수 카운트
 #Paddle
 ![image](https://github.com/Zh0ngtai/6IN-Unity/assets/149444430/4c843ba9-0209-4a0f-9788-040306a18a03)
